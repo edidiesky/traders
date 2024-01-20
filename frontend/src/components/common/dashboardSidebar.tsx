@@ -59,8 +59,8 @@ const AdminSidebarData = [
     },
     {
         icon: <IoMdStats />,
-        title: "Profit Record",
-        path: "tradinghistory",
+        title: "Manage R-O-I",
+        path: "Manage_Roi",
     },
     {
         icon: <IoBriefcase />,
@@ -113,7 +113,7 @@ const DashboardSidebar: React.FC<sidebarProps> = ({ active }) => {
                                             className={({ isActive, isPending }) =>
                                                 isActive ? "active fs-16 text-dark text-extra-bold" : "fs-16 text-dark text-extra-bold"
                                             }
-                                            to={`/account/dashboard/${x.path}`}
+                                            to={`/account/admin/dashboard/${x.path}`}
                                             end
                                         >
                                             {x.icon}
