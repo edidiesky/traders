@@ -44,8 +44,7 @@ const InvestmentHistory = () => {
                                             <th>Start Date</th>
                                             <th>End Date</th>
                                             <th>Status</th>
-                                            <th>Returns</th>
-                                            <th>Actions</th>
+                                            {/* <th>Returns</th> */}
                                         </tr>
                                     </thead>
                                     <tbody>

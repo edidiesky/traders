@@ -29,7 +29,8 @@ import {
   InvestmentHistory,
 
   RoiList,
-  InvestmentList
+  InvestmentList,
+  RoIDetails
 } from "./screens";
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
@@ -119,7 +120,12 @@ export default function App() {
               <Messages />
             </ProtectRoute>
           } />
-          {/* DepositList */}
+          
+          <Route path={'tradinghistory/:id'} element={
+            <ProtectRoute>
+              <RoIDetails />
+            </ProtectRoute>
+          } />
           <Route path={'accounthistory'} element={
             <ProtectRoute>
               <History />

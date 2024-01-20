@@ -18,6 +18,7 @@ import Deposit from './dashboard/Deposit'
 import Payment from './dashboard/Payment'
 import Profile from './dashboard/Profile'
 import InvestmentHistory from './dashboard/Investment'
+import RoIDetails from './dashboard/RoIDetails'
 // InvestmentHistory
 // Profile
 import ManageTransactions from './dashboard/admin/ManageTransactions'
@@ -33,6 +34,7 @@ import LayoutIndex from './Layout'
 import DashboardLayout from './DashboardLayout'
 // InvestmentList
 // RoiList
+// RoIDetails
 export {
     Home,
     LayoutIndex,
@@ -54,6 +56,7 @@ export {
     CustomerList,
     About,
     FAQ,
+    RoIDetails,
     DepositList,
     ManageDeposits,
     Profile,

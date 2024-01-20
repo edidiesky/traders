@@ -70,7 +70,7 @@ export const Roilice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    clearroi: (state, action) => {
+    clearRoi: (state, action) => {
       state.roiisSuccess = false
       state.Roi = []
       state.roiDetails = null
@@ -188,7 +188,7 @@ export const Roilice = createSlice({
   },
 })
 
-export const { clearroi } = Roilice.actions
+export const { clearRoi } = Roilice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 // export const selectCount = (state: RootState) => state.roi.value

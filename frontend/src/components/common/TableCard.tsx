@@ -133,7 +133,47 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
             </>
         );
     }
+    // userroi
     if (type === 'userinvestment') {
+        return (
+            <>
+                {/* <Delete /> */}
+                <tr key={x?._id}>
+                    <td>
+                        <span className="text-grey fs-12 family1">{x?.plan}</span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12 family1">${x?.price}</span>
+                    </td>
+                    <td>
+                        <span className="text-grey fs-12 family1">{x?.tier}</span>
+                    </td>
+                    {/* <td>
+                        <span className="fs-12 family1 text-grey">{x?.tier}</span>
+                    </td> */}
+                    <td>
+                        <span className="fs-12 family1 text-grey">{investmentStartdate}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 family1 text-grey">{investmentEnddate}</span>
+                    </td>
+                    <td>
+                        <span className="fs-12 family1 text-grey">
+                            {x?.isPaid === true ?
+                                <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold true"> Active</span>
+                                : <span style={{ fontSize: "1.2rem" }} className="tablespan fs-10 text-bold false">Incoming</span>
+                            }
+                        </span>
+                    </td>
+                    {/* <td>
+                        <span className="text-grey fs-12 family1">${x?.profit}</span>
+                    </td> */}
+                </tr>
+            </>
+        );
+    }
+
+    if (type === 'userroi') {
         return (
             <>
                 {/* <Delete /> */}
@@ -168,8 +208,8 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         <span className="text-grey fs-12 family1">${x?.profit}</span>
                     </td>
                     <td>
-                        <span style={{gap:"5px"}} className="text-grey w-100 flex fs-12 family1">
-                            <div style={{ padding: "1rem" }} className="btn btn-1 flex items-center justify-center fs-12 family1">View</div>
+                        <span style={{ gap: "5px" }} className="text-grey w-100 flex fs-12 family1">
+                            <Link to={`${x?._id}`} style={{ padding: "1rem" }} className="btn btn-1 flex items-center justify-center fs-12 family1">View</Link>
                             {/* {
 
                                 x?.isPaid !== false && <div style={{ padding: "1rem" }} className="btn fs-12 family1">Make Payment</div>
