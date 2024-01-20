@@ -234,9 +234,9 @@ button {
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 1);
   padding:17px 20px;
-  font-size:1.6rem;
-  font-weight: 600;
-  color: var(--dark-1);
+  font-size:1.5rem;
+  font-weight: 700;
+  color: var(--grey-1);
 }
 
 .text-grey {

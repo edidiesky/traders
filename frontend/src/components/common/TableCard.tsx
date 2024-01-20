@@ -36,7 +36,7 @@ const TableCard: React.FC<TableCardProps> = ({ x, type }) => {
                         </span>
                     </td>
                     <td>
-                        <span className="text-grey fs-12 family1">{x?.investment?.tier}</span>
+                        <span className="text-grey fs-12 family1">{x?.plan}</span>
                     </td>
                     <td>
                         <span className="text-grey fs-12 family1 text-light">{depositdate}</span>

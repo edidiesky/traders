@@ -63,16 +63,15 @@ const AdminSidebarData = [
         path: "tradinghistory",
     },
     {
-        icon: <IoMdStats />,
-        title: "Manage Deposit",
-        path: "deposit_list",
-    },
-    {
         icon: <IoBriefcase />,
-        title: "Manage Transaction",
+        title: "Manage Transaction/ Deposit",
         path: "TransactionList",
     }, 
-
+    {
+        icon: <TbChartHistogram />,
+        title: "Investment History",
+        path: "investment_history",
+    },
     {
         icon: <IoBriefcase />,
         title: "Manage Customers",

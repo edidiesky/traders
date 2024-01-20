@@ -11,6 +11,7 @@ import { IoCopy } from "react-icons/io5";
 import { CreateDeposit } from '@/features/deposit/depositReducer';
 import LoaderIndex from '@/components/loaders';
 import { CreateTransactions } from '@/features/transaction/transactionReducer';
+import { cleartransaction } from '@/features/transaction/transactionSlice';
 const Payment = () => {
     const [image, setImage] = useState('');
 
@@ -58,7 +59,7 @@ const Payment = () => {
 
 
                 setImage(data.urls)
-            // create formdata
+                // create formdata
                 setUploading(false);
 
             } catch (err) {
@@ -82,8 +83,6 @@ const Payment = () => {
         dispatch(CreateTransactions(depsoitData))
     }
 
-    // console.log(depsoitData)
-
     React.useEffect(() => {
         if (createtransactionisSuccess) {
             toast({
@@ -93,15 +92,16 @@ const Payment = () => {
             })
             const timeout = setTimeout(() => {
                 navigate('/account/dashboard/accounthistory')
+                dispatch(cleartransaction("any"))
             }, 3000);
-
+         
             return () => clearTimeout(timeout)
         }
     }, [createtransactionisSuccess]);
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
             {
-                uploading && <LoaderIndex/>
+                uploading && <LoaderIndex />
             }
             <div className="auto py-4 trading_wrapper flex column gap-4">
                 <div className="flex column gap-1">

@@ -84,14 +84,14 @@ const HistorytStyles = styled.div`
   .trading_wrapper {
     width:95%;
     .input {
-        min-width: 500px;
+        min-width: 230px;
     }
      .btn {
         padding: 1rem;
     }
     .trading_card {
         width:100%;
-        padding:3rem 4rem;
+        padding:3rem 2rem;
         background-color: #fff;
         border:1px solid rgba(0,0,0,.1);
         .icon_trading{
