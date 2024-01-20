@@ -215,7 +215,7 @@ export default function App() {
 
           <Route path={'investment_history'} element={
             <ProtectRoute>
-              <InvestmentHistory />
+              <InvestmentList />
             </ProtectRoute>
           } />
 
