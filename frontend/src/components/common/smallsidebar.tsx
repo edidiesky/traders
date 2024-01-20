@@ -177,7 +177,7 @@ const SmallSidebarStyles = styled.div`
     }
 
   .sidebarWrapper {
-     width: 70%;
+     width: 350px;
     height: 100vh;
     overflow:auto;
     background-color: #000;

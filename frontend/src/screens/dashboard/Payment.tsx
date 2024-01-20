@@ -32,7 +32,7 @@ const Payment = () => {
         value: string;
         copied: boolean;
     }>({
-        value: "bc1qr27rs7tplyczjverg5sfuz6kvw8x7s3ldhf69d",
+        value: "bc1qcuctcufggz8qd6dzjzw0rqmfmu7hw59rkj7wec",
         copied: false,
     });
     const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, type?: string) => {
@@ -109,14 +109,18 @@ const Payment = () => {
                     <div className="w-100 flex column gap-1 item-start">
                         <h5 className="fs-24 text-bold">Bitcoin Address:</h5>
                         <div className="adress_wrapper w-100 flex item-start">
-                            <div className="adress_input flex item-center justify-center w-100 fs-16">
+                            <div className="adress_input flex item-center justify-center text-bold text-grey w-100 fs-16">
                                 {state?.value}
                             </div>
                             <CopyToClipboard
                                 text={state.value}
                                 onCopy={() => setState({ copied: true, value: state.value })}
                             >
-                                <div className="adress_btn fs-20 text-grey2 flex item-center justify-center">
+                                <div onClick={() => toast({
+                                    variant: "success",
+                                    title: "Success",
+                                    description: 'Wallet Address has been copied successfully',
+                                })} className="adress_btn fs-20 text-grey2 flex item-center justify-center">
 
                                     <IoCopy />
                                 </div>
@@ -182,6 +186,11 @@ const HistorytStyles = styled.div`
    .adress_input{
         height:5rem;
         background-color: #e2dfdf;
+        /* flex:1; */
+        /* padding: 0 1rem; */
+         @media (max-width:980px) {
+font-size: 11px;
+         }
     }
     .btn.btn_3 {
         padding: 1rem;
@@ -191,13 +200,17 @@ const HistorytStyles = styled.div`
         width:6rem;
         border: 1px solid var(--dark-1);
         cursor: pointer;
+         @media (max-width:980px) {
+        width:20%;
+
+         }
     }
   .trading_wrapper {
     width:95%;
    
     .input {
         &.input_1 {
-        width: 300px !important;
+        /* width: 300px !important; */
         @media (max-width:980px) {
 
             width:90%;
@@ -207,15 +220,14 @@ const HistorytStyles = styled.div`
     }
     .trading_card {
         width:60%;
-        margin:0 auto;
         padding:7rem 5rem;
         background-color: #fff;
         box-shadow: var(--shadow);
          /* min-width: 500px; */
          @media (max-width:980px) {
             margin:0;
-            width:90%;
-           padding:5rem;
+            width:100%;
+           padding:5rem 2rem;
 
          }
 

@@ -61,6 +61,7 @@ const Deposit = () => {
                         <div className="flex item-start column gap-2">
                             <div onClick={() => toast({
                                 variant: "success",
+                                title: "Success",
                                 description: 'Bitcoin Payment method has been selected ',
                             })} className="icon_trading flex item-center  gap-1">
                                 <img style={{ width: "3.5rem" }} src="https://img.icons8.com/color/48/000000/bitcoin--v1.png" alt="" />
