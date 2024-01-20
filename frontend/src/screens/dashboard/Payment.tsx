@@ -23,9 +23,10 @@ const Payment = () => {
     const {
         deposit
     } = useAppSelector(store => store.deposit)
-    React.useEffect(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }, []);
+    const {
+        createtransactionisSuccess
+    } = useAppSelector(store => store.transaction)
+
     const [uploading, setUploading] = useState(false);
 
     const [state, setState] = React.useState<{
@@ -80,6 +81,23 @@ const Payment = () => {
     const HandlePayment = () => {
         dispatch(CreateTransactions(depsoitData))
     }
+
+    // console.log(depsoitData)
+
+    React.useEffect(() => {
+        if (createtransactionisSuccess) {
+            toast({
+                variant: "success",
+                title: "Success",
+                description: 'Transaction has been submitted successfully',
+            })
+            const timeout = setTimeout(() => {
+                navigate('/account/dashboard/accounthistory')
+            }, 3000);
+
+            return () => clearTimeout(timeout)
+        }
+    }, [createtransactionisSuccess]);
     return (
         <HistorytStyles style={{ minHeight: "100vh" }} className="w-100">
             {
@@ -96,7 +114,7 @@ const Payment = () => {
                         <h4 className="fs-16 text-light text-dark">
                             You are to make payment of {" "}
                             <span className="text-extra-bold">
-                                ${deposit?.amount}
+                                ${deposit?.price}
                             </span> using your selected payment method.
                             Screenshot and upload the proof of payment
                         </h4>

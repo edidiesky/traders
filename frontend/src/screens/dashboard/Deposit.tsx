@@ -21,7 +21,7 @@ const Deposit = () => {
     }, []);
     const paymentData = {
         paymentMethod: "Bitcoin",
-        amount,
+        price:amount,
         plan: "Deposit Only"
     }
     // console.log(paymentData)
