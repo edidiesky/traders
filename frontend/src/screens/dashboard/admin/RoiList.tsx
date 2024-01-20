@@ -41,16 +41,16 @@ const CustomerList = () => {
                                             <th>Investor</th>
                                             {/* <th>Role</th> */}
                                             <th>Price</th>
-                                            <th>Payment Mode</th>
-                                            <th>Transaction Status</th>
-                                            <th>Plan</th>
-                                            <th>Date</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Status</th>
+                                            <th>Profit</th>
                                             <th>Manage</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {Roi?.map((x?: any, index?: any) => {
-                                            return <TableCard x={x} type={'userinvestment'} key={x?._id} />;
+                                            return <TableCard x={x} type={'adminroi'} key={x?._id} />;
                                         })}
                                     </tbody>
                                 </table>
@@ -77,7 +77,7 @@ const HistorytStyles = styled.div`
   .trading_wrapper {
     width:95%;
     .input {
-        min-width: 350px;
+        min-width: 270px;
     }
      .btn {
         padding: 1rem;

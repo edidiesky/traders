@@ -4,7 +4,8 @@ import {
   getAllRoi,
   CreateRoi,
   DeleteRoi,
-  GetSingleRoiOfAUser
+  GetSingleRoiOfAUser,
+  GetSingleRoi
 } from './roiReducer'
 interface roiDeleteType {
   _id?: string
@@ -123,6 +124,30 @@ export const Roilice = createSlice({
       state.alertText = action.payload
 
     })
+
+    // create user roi
+    builder.addCase(GetSingleRoi.pending, (state, action) => {
+      state.roiisLoading = true
+
+    })
+    builder.addCase(GetSingleRoi.fulfilled, (state, action) => {
+      state.roiDetails = action.payload
+      state.alertText = 'roi created succesfully'
+      state.showAlert = true
+      state.roiisLoading = false
+      state.roiisSuccess = true
+      state.alertType = 'success'
+    })
+    builder.addCase(GetSingleRoi.rejected, (state, action) => {
+      state.roiisSuccess = false
+      state.roiisError = true
+      state.roiisLoading = false
+      state.showAlert = true
+      state.alertType = 'danger'
+      state.alertText = action.payload
+
+    })
+    // GetSingleRoi
     // GetSingleRoiOfAUser
 
     builder.addCase(GetSingleRoiOfAUser.pending, (state, action) => {

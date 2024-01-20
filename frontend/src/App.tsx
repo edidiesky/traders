@@ -30,7 +30,8 @@ import {
 
   RoiList,
   InvestmentList,
-  RoIDetails
+  RoIDetails,
+  ManageRoi
 } from "./screens";
 import ProtectRoute from "./utils/ProtectRoute";
 import LazyLoader from "./components/loaders/Lazy";
@@ -215,6 +216,12 @@ export default function App() {
           <Route path={'Manage_Roi'} element={
             <ProtectRoute>
               <RoiList />
+            </ProtectRoute>
+          } />
+
+          <Route path={'Manage_Roi/:id'} element={
+            <ProtectRoute>
+              <ManageRoi />
             </ProtectRoute>
           } />
 

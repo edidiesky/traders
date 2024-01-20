@@ -99,8 +99,8 @@ const DeleteRoi = asyncHandler(async (req: CustomInterface, res: Response) => {
 // PRIVATE/ADMIN
 const GetAllRoi = asyncHandler(async (req: CustomInterface, res: Response) => {
   // find all Roi
-  const roi = await Roi.find({})
-  // check for Roi existence
+  const roi = await Roi.find({}).populate('user', 'fullname username email country')
+ 
   if (!roi) {
     throw new Error('No Roi has been created')
   }

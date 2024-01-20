@@ -21,6 +21,7 @@ import InvestmentHistory from './dashboard/Investment'
 import RoIDetails from './dashboard/RoIDetails'
 // InvestmentHistory
 // Profile
+// ManageRoi
 import ManageTransactions from './dashboard/admin/ManageTransactions'
 import RoiList from './dashboard/admin/RoiList'
 import ManageDeposits from './dashboard/admin/ManageDeposits'
@@ -29,6 +30,7 @@ import TransactionList from './dashboard/admin/TransactionList'
 import InvestmentList from './dashboard/admin/InvestmentList'
 import CustomerList from './dashboard/admin/CustomerList'
 import DepositList from './dashboard/admin/DepositList'
+import ManageRoi from './dashboard/admin/ManageRoi'
 // import Contact from './Contact'
 import LayoutIndex from './Layout'
 import DashboardLayout from './DashboardLayout'
@@ -63,5 +65,6 @@ export {
     Contact,
     InvestmentHistory,
     RoiList,
-    InvestmentList
+    InvestmentList,
+    ManageRoi
 }
