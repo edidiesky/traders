@@ -66,7 +66,7 @@ const Register: React.FC = () => {
                 registerisLoading && <LoaderIndex />
             }
             <div className="login_wrapper">
-                <div className="w-90 auto flex item-center justify-center">
+                <div className="auto flex item-center justify-center">
                     <div className="login_form_wrapper flex column gap-4">
                         <form onSubmit={(e) => handleRegisterUser(e)} className="login_form_wrapper_content  w-100 flex column item-start gap-4">
                             <div className="flex w-100 column gap-2">

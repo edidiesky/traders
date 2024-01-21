@@ -162,7 +162,7 @@ const Courses = () => {
                         Welcome, {userInfo?.username}!
                     </h2>
                     <span className="fs-16 w-50 text-light text-grey2">
-                        Welcome to MetaCore Point
+                        Welcome to TerratexTrading
                     </span>
                 </div>
                 <div className="w-100 flex column gap-4">

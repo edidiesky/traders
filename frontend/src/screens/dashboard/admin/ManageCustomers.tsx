@@ -81,11 +81,12 @@ const ManageCustomers = () => {
         if (updateuserprofileisSuccess) {
             toast({
                 variant: "success",
-                description: 'User Porfile has been succesfully updated',
+                title: "success",
+                description: 'User Profile has been succesfully updated',
             })
             const timeout = setTimeout(() => {
                 dispatch(clearUserProfile('any'))
-                navigate('/account/dashboard/Manage_Customers')
+                navigate('/account/admin/dashboard/Manage_Customers')
             }, 5000);
         }
         if (userprofileisSuccess) {
