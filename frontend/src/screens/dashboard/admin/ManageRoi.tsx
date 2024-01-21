@@ -29,7 +29,7 @@ const ManageRoi = () => {
         userInfo
     } = useAppSelector(store => store.auth)
     const {
-        
+        roiDetails
     } = useAppSelector(store => store.roi)
     const { toast } = useToast()
 
@@ -89,55 +89,52 @@ const ManageRoi = () => {
                     </h2>
                 </div>
                 <div className="trading_container">
-                    {
-                        depositData?.map((x?: any, index?: any) => {
-                            return <div key={index} className="trading_card flex column gap-3">
-                                <h4 className="fs-18 text-bold">{x?.title}</h4>
-                                <h3 className="fs-50 py-1 text-center family1">
-                                    <span className='fs-20'>$</span>
-                                    {x?.amount}</h3>
-                                <div className="w-100 flex column gap-1 fs-14 text-light text-dark">
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Minimum Possible Deposit:
-                                        <span className="text-bold">${x?.min_deposit}</span>
-                                    </span>
-                                    {/* max deposit */}
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Maximum Possible Deposit:
-                                        <span className="text-bold">${x?.max_deposit}</span>
-                                    </span>
-                                    {/* Min Return */}
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Minimum Return:
-                                        <span className="text-bold">${x?.min_return}</span>
-                                    </span>
-                                    {/* Maximum Return */}
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Maximum Return:
-                                        <span className="text-bold">${x?.max_return}</span>
-                                    </span>
+                  
+                    <div className="trading_card flex column gap-3">
+                        <h4 className="fs-18 text-bold">{roiDetails?.title}</h4>
+                        <h3 className="fs-50 py-1 text-center family1">
+                            <span className='fs-20'>$</span>
+                            {roiDetails?.price}</h3>
+                        <div className="w-100 flex column gap-1 fs-14 text-light text-dark">
+                            <span className='w-100 flex gap-1 item-center justify-space'>Minimum Possible Deposit:
+                                <span className="text-bold">${roiDetails?.min_deposit}</span>
+                            </span>
+                            {/* max deposit */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Maximum Possible Deposit:
+                                <span className="text-bold">${roiDetails?.max_deposit}</span>
+                            </span>
+                            {/* Min Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Minimum Return:
+                                <span className="text-bold">${roiDetails?.min_return}</span>
+                            </span>
+                            {/* Maximum Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Maximum Return:
+                                <span className="text-bold">${roiDetails?.max_return}</span>
+                            </span>
 
-                                    {/* Gift Bomus Return */}
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Gift Bonus:
-                                        <span className="text-bold">${x?.gift_bonus}</span>
-                                    </span>
+                            {/* Gift Bomus Return */}
+                            <span className='w-100 flex gap-1 item-center justify-space'>Gift Bonus:
+                                <span className="text-bold">${roiDetails?.gift_bonus}</span>
+                            </span>
 
-                                    <span className='w-100 flex gap-1 item-center justify-space'>Duration:
-                                        <span className="text-bold">{x?.duration} Days</span>
-                                    </span>
-                                </div>
-                                <div className="w-100 flex column gap-1">
-                                    <h4 className="fs-14 text-light">Amount to invest: ($1000 default)</h4>
-                                    <input
-                                        name='investmentAmount'
-                                        value={`${x?.amount}`}
-                                        onChange={(e) => setInvestmentAmount(`${x?.amount}`)}
-                                        className="input w-100" type='number' placeholder={`${x?.amount}`}></input>
-                                    <button onClick={() =>
-                                        userInfo?.deposit < x?.amount
-                                            ? handleInvestmentPackage(x?.amount)
-                                            :
-                                            handlePackagePayment(x?.amount, x?.title)} className="btn fs-14 text-bold text-white">Update Amount</button>
-                                </div>
-                            </div>
-                        })
-                    }
+                            <span className='w-100 flex gap-1 item-center justify-space'>Duration:
+                                <span className="text-bold">{roiDetails?.duration} Days</span>
+                            </span>
+                        </div>
+                        <div className="w-100 flex column gap-1">
+                            <h4 className="fs-14 text-light">Amount to invest: ($1000 default)</h4>
+                            <input
+                                name='investmentAmount'
+                                value={`${roiDetails?.amount}`}
+                                onChange={(e) => setInvestmentAmount(`${roiDetails?.amount}`)}
+                                className="input w-100" type='number' placeholder={`${roiDetails?.amount}`}></input>
+                            <button onClick={() =>
+                                userInfo?.deposit < roiDetails?.amount
+                                    ? handleInvestmentPackage(roiDetails?.amount)
+                                    :
+                                    handlePackagePayment(roiDetails?.amount, roiDetails?.title)} className="btn fs-14 text-bold text-white">Update Amount</button>
+                        </div>
+                    </div>
 
                 </div>
             </div>

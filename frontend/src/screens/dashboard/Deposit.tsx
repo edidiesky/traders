@@ -90,10 +90,10 @@ const HistorytStyles = styled.div`
   .trading_wrapper {
     width:95%;
     .input {
-        min-width: 350px;
-           @media (max-width:780px) {
+        min-width: 270px;
+           /* @media (max-width:780px) {
             min-width:100%;
-        }
+        } */
     }
     .btn {
         min-width:200px;

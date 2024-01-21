@@ -83,11 +83,11 @@ const AdminSidebarData = [
         title: "Invest",
         path: "invest",
     },
-    {
-        icon: <SlSupport />,
-        title: "Help/Support ",
-        path: "support",
-    },
+    // {
+    //     icon: <SlSupport />,
+    //     title: "Help/Support ",
+    //     path: "support",
+    // },
 ];
 
 type SidebarProps = {

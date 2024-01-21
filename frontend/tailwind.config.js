@@ -17,13 +17,18 @@ module.exports = {
       },
     },
     extend: {
+      // Blog_Styles
+      fontFamily: {
+        "Udemy_Sans_Bold": ["Udemy_Sans_Bold", "sans-serif"],
+        "Udemy_Sans_Light": ["Udemy_Sans_Light", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        custom_1:"#0A3041",
+        custom_1: "#0A3041",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

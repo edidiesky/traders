@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const tweeturl: string = `${import.meta.env.VITE_API_BASE_URLS}/deposit`;
+const tweeturl: string = `https://traders-expert-api.vercel.app/api/v1/deposit`;
 type tweetdatatype = {
   paymentMethod?: any;
   amount?: any;
@@ -93,7 +93,7 @@ export const UpdateDeposit = createAsyncThunk<{
         },
       };
       const response = await axios.put(
-        `${import.meta.env.VITE_API_BASE_URLS}/deposit/${Detailsdata?._id}`,
+        `https://traders-expert-api.vercel.app/api/v1/deposit/${Detailsdata?._id}`,
         Detailsdata,
         config
       );
@@ -126,7 +126,7 @@ export const DeleteDeposit = createAsyncThunk<
           authorization: `Bearer ${auth.token}`,
         },
       };
-      await axios.delete(`${import.meta.env.VITE_API_BASE_URLS}/tweet/${Detailsdata}`, config);
+      await axios.delete(`https://traders-expert-api.vercel.app/api/v1/tweet/${Detailsdata}`, config);
       return Detailsdata; // Return the data
     } catch (err: any) {
       const message = err.response && err.response.data.message
@@ -155,7 +155,7 @@ export const GetSingleDeposit = createAsyncThunk<BookMarkATweetPayload, { Detail
         },
       };
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URLS}/deposit/${Detailsdata}`,
+        `https://traders-expert-api.vercel.app/api/v1/deposit/${Detailsdata}`,
         config
       );
       return response.data.deposit
@@ -189,7 +189,7 @@ export const GetSingleDepsoitOfAUser = createAsyncThunk<BookMarkATweetPayload, {
         },
       };
       const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URLS}/deposit/profile`,
+        `https://traders-expert-api.vercel.app/api/v1/deposit/profile`,
         config
       );
       return response.data.deposit
