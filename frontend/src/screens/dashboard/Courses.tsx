@@ -26,7 +26,7 @@ const Courses = () => {
             icon: <FaHouse />,
             title: "Account Balance",
             path: ``,
-            value: `$ ${userData?.deposit}`,
+            value: `$ ${userData?.account_balance}`,
             color: "#6861CE"
         },
         {
@@ -40,7 +40,7 @@ const Courses = () => {
             icon: <FaGift />,
             title: "Total Bonus",
             color: "#31CE36",
-            value: `$ ${userData?.bonus}`,
+            value: `$ ${userData?.total_bonus}`,
             path: "overview",
         },
         {
