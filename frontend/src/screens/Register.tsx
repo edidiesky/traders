@@ -203,7 +203,7 @@ const HomeStyles = styled.div`
     .login_form_wrapper {
        margin: 10rem auto;
       display: flex;
-      width: 50%;
+      width: 46%;
       align-items: center;
      
       flex-direction: column;
@@ -217,18 +217,29 @@ const HomeStyles = styled.div`
     padding-top: 1.5rem;
   }
       @media (max-width: 780px) {
-        width: 90%;
-      padding: 7rem 5rem;
-
+        width: 95%;
+      padding: 7rem 2rem;
+       .login_form_wrapper_content{
+      background: #fff;
+      box-shadow:var(--shadow);
+       border-radius: 10px;
+        padding:5.5rem 3rem;
+      }
+      }
       }
 
        @media (max-width: 580px) {
-        width: 99%;
-      padding:  3rem;
-
+        width: 95%;
+      padding: 7rem 0;
+         .login_form_wrapper_content{
+      background: #fff;
+      box-shadow:var(--shadow);
+       border-radius: 10px;
+        padding:5.5rem 2rem;
+      }
       }
     }
-  }
+  
   .btn:disabled {
       cursor: not-allowed;
       opacity: .6;

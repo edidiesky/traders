@@ -63,7 +63,7 @@ const Register: React.FC = () => {
                 loginisLoading && <LoaderIndex />
             }
             <div className="login_wrapper">
-                <div className="w-90 auto flex item-center justify-center">
+                <div className="w-100 auto flex item-center justify-center">
                     <div className="login_form_wrapper flex column gap-3">
                         <div className="w-100 flex column login_form_wrapper_content item-start gap-4">
                             <div className="flex w-100 column item-center justify-center gap-2">
@@ -163,18 +163,29 @@ const HomeStyles = styled.div`
     padding-top: 1.5rem;
   }
       @media (max-width: 780px) {
-        width: 90%;
-      padding: 7rem 5rem;
-
+        width: 95%;
+      padding: 7rem 2rem;
+       .login_form_wrapper_content{
+      background: #fff;
+      box-shadow:var(--shadow);
+       border-radius: 10px;
+        padding:5.5rem 3rem;
+      }
+      }
       }
 
        @media (max-width: 580px) {
         width: 95%;
-      padding: 7rem 5rem;
-
+      padding: 7rem 0;
+         .login_form_wrapper_content{
+      background: #fff;
+      box-shadow:var(--shadow);
+       border-radius: 10px;
+        padding:5.5rem 2rem;
+      }
       }
     }
-  }
+  
   .btn:disabled {
       cursor: not-allowed;
       opacity: .6;
