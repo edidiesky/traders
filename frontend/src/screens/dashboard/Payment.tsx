@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from "styled-components";
 import axios from "axios";
 import { useToast } from "@/components/ui/use-toast"
-import { ToastAction } from "@/components/ui/toast"
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxtoolkit";
 
 import { useNavigate } from 'react-router-dom';
@@ -55,7 +54,7 @@ const Payment = () => {
                         "Content-Type": "multipart/form-data",
                     },
                 };
-                const { data } = await axios.post(`${import.meta.env.VITE_API_BASE_URLS}/upload/single`, formData, config);
+                const { data } = await axios.post(`https://traders-expert-api.vercel.app/api/v1/upload/single`, formData, config);
 
 
                 setImage(data.urls)

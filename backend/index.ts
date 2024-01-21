@@ -14,7 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(
   cors({
-    origin: 'https://terratextrading.com',
+    // origin: 'https://terratextrading.com',
+    origin: process.env.WEB_ORIGIN,
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   })

@@ -162,7 +162,7 @@ const HomeStyles = styled.div`
       .auth_bottom{
     padding-top: 1.5rem;
   }
-      @media (max-width: 780px) {
+      @media (max-width: 980px) {
         width: 95%;
       padding: 7rem 2rem;
        .login_form_wrapper_content{

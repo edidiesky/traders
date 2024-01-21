@@ -1,6 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+// ${import.meta.env.VITE_API_BASE_URLS}
+// https://traders-expert-api.vercel.app/api/v1
 const Registerurl: string = `https://traders-expert-api.vercel.app/api/v1/auth/register`;
 const Loginurl = `https://traders-expert-api.vercel.app/api/v1/auth/login`;
 
