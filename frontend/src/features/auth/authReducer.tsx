@@ -3,8 +3,8 @@ import axios from "axios";
 
 // ${import.meta.env.VITE_API_BASE_URLS}
 // https://traders-expert-api.vercel.app/api/v1
-const Registerurl: string = `https://traders-expert-api.vercel.app/api/v1/auth/register`;
-const Loginurl = `https://traders-expert-api.vercel.app/api/v1/auth/login`;
+const Registerurl: string = `${import.meta.env.VITE_API_BASE_URLS}/auth/register`;
+const Loginurl = `${import.meta.env.VITE_API_BASE_URLS}/auth/login`;
 
 type RegisterData = {
   username?: string;
@@ -90,7 +90,7 @@ export const UpdateProfile = createAsyncThunk<{
         },
       };
       const response = await axios.put(
-        `https://traders-expert-api.vercel.app/api/v1/user/${profiledata?._id}`,
+        `${import.meta.env.VITE_API_BASE_URLS}/user/${profiledata?._id}`,
         profiledata,
         config
       );
@@ -123,7 +123,7 @@ export const GetSingleUser = createAsyncThunk<{
         },
       };
       const response = await axios.get(
-        `https://traders-expert-api.vercel.app/api/v1/user/${auth?.userInfo?._id}`,
+        `${import.meta.env.VITE_API_BASE_URLS}/user/${auth?.userInfo?._id}`,
         config
       );
       localStorage.setItem("User", JSON.stringify(response.data.user));
@@ -155,7 +155,7 @@ export const GetUserProfile = createAsyncThunk<{
         },
       };
       const response = await axios.get(
-        `https://traders-expert-api.vercel.app/api/v1/user/${profileId}`,
+        `${import.meta.env.VITE_API_BASE_URLS}/user/${profileId}`,
         config
       );
       return response.data.user;
@@ -187,7 +187,7 @@ export const GetAllUserProfile = createAsyncThunk<{
         },
       };
       const response = await axios.get(
-        `https://traders-expert-api.vercel.app/api/v1/user`,
+        `${import.meta.env.VITE_API_BASE_URLS}/user`,
         config
       );
       return response.data.user;

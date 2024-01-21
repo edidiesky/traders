@@ -9,16 +9,19 @@ import { FaHouse, FaGift } from "react-icons/fa6";
 import { IoBriefcase } from "react-icons/io5";
 import { useAppDispatch, useAppSelector } from '@/hooks/reduxtoolkit';
 import { GetSingleInvestmentOfAUser } from '@/features/investments/investmentReducer';
+import { GetSingleRoiOfAUser } from '@/features/roi/roiReducer';
 
 const Courses = () => {
     const { userInfo } = useAppSelector(store => store.auth)
     const dispatch = useAppDispatch()
 
-    const { investments  } = useAppSelector(store => store.investments)
+    const { investments } = useAppSelector(store => store.investments)
+    const { Roi } = useAppSelector(store => store.roi)
     const userData = JSON.parse(localStorage.getItem("User") || 'false');
     React.useEffect(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         dispatch(GetSingleInvestmentOfAUser({ Detailsdata: "" }))
+        dispatch(GetSingleRoiOfAUser({ Detailsdata: "" }))
     }, []);
 
     const sidebarData = [
@@ -52,14 +55,15 @@ const Courses = () => {
         }, {
             icon: <AiOutlineMail />,
             title: "Total Investment Plans",
-            value: `${userData?.deposit}`,
+            value: `${investments?.length}`,
             path: "reviews",
             color: "#48ABF7",
         },
         {
             icon: <HiOutlineMailOpen />,
             title: "Total Active Investment Plans ",
-            value: `${userData?.deposit}`,
+            value: `${Roi?.length}`,
+
             path: "students",
             color: "#31CE36",
 
@@ -76,7 +80,7 @@ const Courses = () => {
             icon: <SlSupport />,
             title: "Help/Support ",
             path: "students",
-            value: `${userData?.deposit}`,
+            value: `0`,
             color: "rgb(242,89,97)",
 
         },
