@@ -104,7 +104,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <div style={{ zIndex: "200" }} className={`navbar ${bar ? 'active' : ""} flex`}>
+                <div style={{ zIndex: "20000000" }} className={`navbar ${bar ? 'active' : ""} flex`}>
                     <div className="w-100 flex column">
                         <Link to={'/'} className="fs-14 list text-light uppercase text-white">
                             Home
