@@ -59,6 +59,18 @@ const CreateUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
 
 })
 
+const GetSingleUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
+  const user = await User.findOne({ _id: req.params.id });
+  if (!user) {
+    res.status(404);
+    throw new Error("The user does not exist");
+  }
+  res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+  res.status(200).json({ user });
+});
+
+
 //PRIVATE/
 // ADMIN
 const DeleteUser = asyncHandler(async (req: ExpressRequest, res: Response) => {
